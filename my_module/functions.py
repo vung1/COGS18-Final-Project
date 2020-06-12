@@ -7,7 +7,7 @@ from IPython.display import clear_output
 
 class GameBoard():
 
-    def __init__(self, width=10, height=10):
+    def __init__(self, width = 10, height = 10):
         """Initializes the game board to play the game.
 
         Parameters
@@ -194,7 +194,7 @@ class GameBoard():
 
         return False
 
-    def add_random_obstacles(self, num_obstacles=3):
+    def add_random_obstacles(self, num_obstacles = 3):
         """Adds random obstacles on the board to prevent the player from
         reaching the finish. The obstacles can only be placed on empty
         squares.
