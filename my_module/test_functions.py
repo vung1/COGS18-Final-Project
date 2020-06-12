@@ -15,16 +15,16 @@ def test_GameBoard():
     assert game.grid == [["S", " ", " "],
                          [" ", " ", " "],
                          [" ", " ", "F"]]
-    assert game.currentRow == 0
-    assert game.currentColumn == 0
+    assert game.current_row == 0
+    assert game.current_col == 0
 
 
 def test_set_player_location():
     game = GameBoard(2, 2)
     assert game.height == 2
     assert game.width == 2
-    assert game.currentRow == 0
-    assert game.currentColumn == 0
+    assert game.current_row == 0
+    assert game.current_col == 0
     game.set_player_location()
     assert game.grid == [["O", " "],
                          [" ", "F"]]
@@ -39,8 +39,8 @@ def test_move_right():
                          [" ", " ", " "],
                          [" ", " ", " "],
                          [" ", " ", "F"]]
-    assert game.currentColumn == 2
-    assert game.currentRow == 0
+    assert game.current_col == 2
+    assert game.current_row == 0
 
 
 def test_can_move_right():
@@ -57,8 +57,8 @@ def test_move_down():
     assert game.grid == [[".", " ", " "],
                          [".", " ", " "],
                          ["O", " ", "F"]]
-    assert game.currentColumn == 0
-    assert game.currentRow == 2
+    assert game.current_col == 0
+    assert game.current_row == 2
 
 
 def test_can_move_down():
@@ -76,8 +76,8 @@ def test_add_random_obstacles():
                          ["X", "X", "X"],
                          ["X", "X", "X"],
                          ["X", "X", "F"]]
-    assert game.currentColumn == 0
-    assert game.currentRow == 0
+    assert game.current_col == 0
+    assert game.current_row == 0
     assert game.add_random_obstacles() == False
 
 

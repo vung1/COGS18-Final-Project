@@ -19,7 +19,7 @@ class GameBoard():
 
         Returns
         -------
-        The game board is now initialized with the proper width and height. 
+        The game board is now initialized with the proper width and height.
         The Start and Finishing locations is also populated onto the grid.
         The current location that the player will start any game will always
         be at the coordinate (0, 0)
@@ -44,16 +44,16 @@ class GameBoard():
         self.grid[self.height - 1][self.width - 1] = "F"
 
         # Keeps track of the current column you are on
-        self.currentColumn = 0
+        self.current_col = 0
         # Keeps track of the current row you are on
-        self.currentRow = 0
+        self.current_row = 0
 
     def set_player_location(self):
         """
         Marks the current location of the player with the "O" symbol
         """
 
-        self.grid[self.currentRow][self.currentColumn] = "O"
+        self.grid[self.current_row][self.current_col] = "O"
 
     def move_right(self):
         """Moves the player as far right on the grid as possible. The player
@@ -62,15 +62,15 @@ class GameBoard():
 
         # checks if the player can still move right on the board
         if self.can_move_right():
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.grid[self.current_row][self.current_col] = "."
 
         # Continues to move as far right on the board as possible and updates
         # the grid with "." for each spot the player has visited.
         while self.can_move_right():
-            self.currentColumn += 1
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.current_col += 1
+            self.grid[self.current_row][self.current_col] = "."
 
-        self.set_player_location()  # marks the current loocatioon of the player
+        self.set_player_location()  # marks the current location of the player
 
     def move_left(self):
         """Moves the player as far left on the grid as possible. The player
@@ -79,15 +79,15 @@ class GameBoard():
 
         # cheecks if the player can still move left on the board
         if self.can_move_left():
-            self.grid[self.currentRow][self.currentColumn] == "."
+            self.grid[self.current_row][self.current_col] = "."
 
         # Continues to move as far left on the board as possible and updates
         # the grid with  for each spot the player has visited.
         while self.can_move_left():
-            self.currentColumn -= 1
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.current_col -= 1
+            self.grid[self.current_row][self.current_col] = "."
 
-        self.set_player_location()  # marks the current loocatioon of the player
+        self.set_player_location()  # marks the current location of the player
 
     def move_down(self):
         """Moves the player as far down on the grid as possible. The player
@@ -96,15 +96,15 @@ class GameBoard():
 
         # checks if the player can still move down on the board
         if self.can_move_down():
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.grid[self.current_row][self.current_col] = "."
 
         # Continues to move as far down on the board as possible and updates
         # the grid with  for each spot the player has visited.
         while self.can_move_down():
-            self.currentRow += 1
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.current_row += 1
+            self.grid[self.current_row][self.current_col] = "."
 
-        self.set_player_location()  # marks the current loocatioon of the player
+        self.set_player_location()  # marks the current location of the player
 
     def move_up(self):
         """Moves the player as far up on the grid as possible. The player
@@ -113,15 +113,15 @@ class GameBoard():
 
         # checks if the player can still move up on the board
         if self.can_move_up():
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.grid[self.current_row][self.current_col] = "."
 
         # Continues to move as far left on the board as possible and updates
         # the grid with  for each spot the player has visited.
         while self.can_move_up():
-            self.currentRow -= 1
-            self.grid[self.currentRow][self.currentColumn] = "."
+            self.current_row -= 1
+            self.grid[self.current_row][self.current_col] = "."
 
-        self.set_player_location()  # marks the current loocatioon of the player
+        self.set_player_location()  # marks the current location of the player
 
     def can_move_left(self):
         """Determines if the player can still move left.
@@ -134,9 +134,9 @@ class GameBoard():
         # If the player has not hit the left most boundary on the board or
         # the left position is empty/finish location, then they can still
         # move left.
-        if (self.currentColumn - 1 != - 1
-            and (self.grid[self.currentRow][self.currentColumn - 1] == " "
-                 or self.grid[self.currentRow][self.currentColumn] == "F")):
+        if (self.current_col - 1 != - 1
+            and (self.grid[self.current_row][self.current_col - 1] == " "
+                 or self.grid[self.current_row][self.current_col] == "F")):
             return True
 
         return False
@@ -152,9 +152,9 @@ class GameBoard():
         # If the player has not hit the right most boundary on the board or
         # the right position is empty/finish location, then they can still
         # move right.
-        if (self.currentColumn + 1 != self.width
-            and (self.grid[self.currentRow][self.currentColumn + 1] == " "
-                 or self.grid[self.currentRow][self.currentColumn + 1] == "F")):
+        if (self.current_col + 1 != self.width
+            and (self.grid[self.current_row][self.current_col + 1] == " "
+                 or self.grid[self.current_row][self.current_col + 1] == "F")):
             return True
 
         return False
@@ -169,9 +169,9 @@ class GameBoard():
         # If the player has not hit the top most boundary on the board or
         # the top position is empty/finish location, then they can still
         # move up.
-        if (self.currentRow - 1 != - 1
-            and (self.grid[self.currentRow - 1][self.currentColumn] == " "
-                 or self.grid[self.currentRow - 1][self.currentColumn] == "F")):
+        if (self.current_row - 1 != - 1
+            and (self.grid[self.current_row - 1][self.current_col] == " "
+                 or self.grid[self.current_row - 1][self.current_col] == "F")):
             return True
 
         return False
@@ -187,16 +187,16 @@ class GameBoard():
         # If the player has not hit the bottom most boundary on the board or
         # the bottom position is empty/finish location, then they can still
         # move down.
-        if (self.currentRow + 1 != self.height
-            and (self.grid[self.currentRow + 1][self.currentColumn] == " "
-                 or self.grid[self.currentRow + 1][self.currentColumn] == "F")):
+        if (self.current_row + 1 != self.height
+            and (self.grid[self.current_row + 1][self.current_col] == " "
+                 or self.grid[self.current_row + 1][self.current_col] == "F")):
             return True
 
         return False
 
     def add_random_obstacles(self, num_obstacles=3):
         """Adds random obstacles on the board to prevent the player from
-        reaching the finish. The obstacles can only be placed on empty 
+        reaching the finish. The obstacles can only be placed on empty
         squares.
 
         Parameters
@@ -270,8 +270,8 @@ class GameBoard():
         """
 
         # checks to see if the player is at the bottom right corner
-        if (self.currentColumn == self.width - 1
-                and self.currentRow == self.height - 1):
+        if (self.current_col == self.width - 1
+                and self.current_row == self.height - 1):
             return True
 
         return False
@@ -306,7 +306,7 @@ class GameBoard():
                     self.move_left()
                     break
                 # if the right arrow key key is pressed, move right
-                if keyboard.is_pressed("right arrow"):
+                elif keyboard.is_pressed("right arrow"):
                     self.move_right()
                     break
                 # if the up arrow key is pressed, move up
