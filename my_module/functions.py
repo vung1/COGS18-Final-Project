@@ -26,13 +26,13 @@ class GameBoard():
         """
 
         # If the width of the board is too small, set back to default width
-        if width <= 0:
+        if width < 2:
             self.width = 10
         else:
             self.width = width
 
         # If the height of the board is too small, set back to default width
-        if height <= 0:
+        if height < 2:
             self.height = 10
         else:
             self.height = height
@@ -286,7 +286,7 @@ class GameBoard():
 
         message = "The objective of the game is to start at S on the board " \
                   "and move to F. Use the arrow keys on your keyboard to " \
-                  "move left, right, down, and up. To add an obstacle to " \
+                  "move up, left, down, and right. To add an obstacle to " \
                   "make the game more challenging, press X and input the " \
                   "number of obstacles (int). To quit the game, press q."
         print(message)
@@ -317,8 +317,8 @@ class GameBoard():
                 elif keyboard.is_pressed("down arrow"):
                     self.move_down()
                     break
-                # if the "X" or 'x' key is pressed, add random obstacles
-                elif keyboard.is_pressed("X") or keyboard.is_pressed("X"):
+                # if the "X" key is pressed, add random obstacles
+                elif keyboard.is_pressed("X"):
                     # ask the user for the amount of obstacles they want to add
                     num_obstacles = int(input(
                         "Enter the number of obstacles you want to add"))
