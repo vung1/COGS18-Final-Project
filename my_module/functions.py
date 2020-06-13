@@ -7,7 +7,7 @@ from IPython.display import clear_output
 
 class GameBoard():
 
-    def __init__(self, width = 10, height = 10):
+    def __init__(self, width=10, height=10):
         """Initializes the game board to play the game.
 
         Parameters
@@ -23,6 +23,10 @@ class GameBoard():
         The Start and Finishing locations is also populated onto the grid.
         The current location that the player will start any game will always
         be at the coordinate (0, 0)
+
+        Attribution
+        ___________
+        The line that creates the grid was taken from A4.
         """
 
         # If the width of the board is too small, set back to default width
@@ -194,7 +198,7 @@ class GameBoard():
 
         return False
 
-    def add_random_obstacles(self, num_obstacles = 3):
+    def add_random_obstacles(self, num_obstacles=3):
         """Adds random obstacles on the board to prevent the player from
         reaching the finish. The obstacles can only be placed on empty
         squares.
@@ -277,7 +281,12 @@ class GameBoard():
         return False
 
     def print_board(self):
-        """Prints the state of the current board"""
+        """Prints the state of the current board
+
+        Attribution
+        ___________
+        Printing the grid was taken from A4.
+        """
 
         print("\n".join([" ".join(lst) for lst in self.grid]))
 
@@ -296,7 +305,7 @@ class GameBoard():
 
         # game continues as long as you have not won or no further moves can
         # be made
-        while(not game_over and not game_won):
+        while not game_over and not game_won:
             self.print_board()  # prints the current board
 
             # checks which keys are pressed on the keyboard
