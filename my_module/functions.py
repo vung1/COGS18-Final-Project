@@ -131,7 +131,7 @@ class GameBoard():
         """Determines if the player can still move left.
 
         Returns
-        _______
+        -------
         True if the player can still move left and false otherwise.
         """
 
@@ -149,7 +149,7 @@ class GameBoard():
         """Determines if the player can still move right.
 
         Returns
-        _______
+        -------
         True if the player can still move right and false otherwise.
         """
 
@@ -166,7 +166,7 @@ class GameBoard():
     def can_move_up(self):
         """Determines if the player can still move up.
         Returns
-        _______
+        -------
         True if the player can still move up and false otherwise
         """
 
@@ -184,7 +184,7 @@ class GameBoard():
         """Determines if the player can still move down.
 
         Returns
-        _______
+        -------
         True if the player can still move down and false otherwise
         """
 
@@ -269,7 +269,7 @@ class GameBoard():
         corner.
 
         Returns
-        _______
+        -------
         True if the player has won the game and false otherwise
         """
 
