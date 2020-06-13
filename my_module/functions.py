@@ -25,7 +25,7 @@ class GameBoard():
         be at the coordinate (0, 0)
 
         Attribution
-        ___________
+        -----------
         The line that creates the grid was taken from A4.
         """
 
@@ -284,7 +284,7 @@ class GameBoard():
         """Prints the state of the current board
 
         Attribution
-        ___________
+        -----------
         Printing the grid was taken from A4.
         """
 
